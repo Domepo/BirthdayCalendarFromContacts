@@ -1,6 +1,7 @@
 # Birthday Calendar From Contacts
+<img src="https://github.com/Domepo/BirthdayCalendarFromContacts/blob/main/example/happy_birthday.gif" alt="https://pixabay.com/de/photos/portrait-kind-h%C3%A4nde-verstecken-317041/" width="192" height="144"><br>
 This is a simple tool to convert your contacts.csv to an ical file <br>
-###### Why?
+##### Why?
 Google dont give you an Birthday alert when you synchronize Google-Calender and Google-Contacts. <br>
 In most cases your forced to download apps which notify you<br>
 
