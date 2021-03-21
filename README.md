@@ -5,7 +5,6 @@ This is a simple tool to convert your contacts.csv to an ical file <br>
 Google dont give you an Birthday alert when you synchronize Google-Calender and Google-Contacts. <br>
 In most cases your forced to download apps which notify you<br>
 
-
 ## Installation
 ```pip
 pip3 install icalendar
@@ -57,4 +56,6 @@ PRIORITY:5
 END:VEVENT
 END:VCALENDAR
 ```
+#### Inside Google Calendar:
+<img src="https://github.com/Domepo/BirthdayCalendarFromContacts/blob/main/example/Screenshot.png" alt="https://pixabay.com/de/photos/portrait-kind-h%C3%A4nde-verstecken-317041/" width="435" height="313"><br>
 
