@@ -1,9 +1,9 @@
-from icalendar import Calendar, Event
-from datetime import datetime
+from icalendar import Calendar, Event, Alarm
+from datetime import datetime, timedelta
 from pytz import UTC # timezone
 import csv
 
-contact_file = "contacts.csv"
+contact_file = "mycontacts.csv"
 ics_export_file = "birthday.ics"
 alert_begin = 8
 alert_end = 10
@@ -41,6 +41,12 @@ def writeICS(format_time_list,row):
     # Event Docs:
     # https://www.kanzaki.com/docs/ical/
     event = Event()
+    alarm = Alarm()
+    alarm.add("description","This is an event reminder")
+    alarm.add("action","DISPLAY")
+    alarm.add("trigger",timedelta(minutes=-10))
+
+
     event.add("rrule", {"freq": "yearly"} )
     event.add("summary", row["Name"])
     event.add("dtstart", datetime(f_year,f_month,f_day,alert_begin,0,0,tzinfo=UTC))
@@ -49,7 +55,10 @@ def writeICS(format_time_list,row):
     # unique ID
     event["uid"] = str(datetime(f_year,f_month,f_day,alert_begin,0,0,tzinfo=UTC))+row["Name"]
     event.add("priority", 5)
+    event.add_component(alarm)
     cal.add_component(event)
+
+
 
     f = open(ics_export_file, "wb")
     f.write(cal.to_ical())
